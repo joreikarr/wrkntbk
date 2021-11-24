@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+
+<div>
+    <aside>
+        <img src="{% static 'main/img/logo_w.png' %}" alt="">
+        <span class="logo">Social</span>
+        <h4>Навигация</h4>
+        <br>
+        <ul>
+
+            <a href="{% url 'main:index' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="{% url 'main:opened' %}"><li><i class="fas fa-lock-open"></i> Открытые</li></a>
+            <a href="{% url 'main:marks' %}"><li><i class="fas fa-marker"></i></i> Правки</li></a>
+            <a href="{% url 'main:frozen' %}"><li><i class="fas fa-stopwatch"></i> Замороженные</li></a>
+            <a href="{% url 'main:closed' %}"><li><i class="fas fa-lock"></i> Закрытые</li></a>
+            <a href="{% url 'main:payments' %}"><li><i class="fas fa-coins"></i> Оплаты</li></a>
+            <a href="{% url 'main:logout' %}"><li><i class="fas fa-door-open"></i> Выйти</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Открытые
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Открытые заказы</h1>
+    {% if list %}
+        {% for task in list %}
+            <p><a href="{% url 'main:task' task.identified %}"> <i class="fas fa-pen"></i> {{task.identified}}({{task.manager}}) </a></p>
+        {% endfor %}
+    {% endif %}
+        <a class="btn btn-warning" href="{% url 'main:new_task' %}">Новый таск</a>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Оплата
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    {% if payment %}
+    <h1>{{payment.task_fk.identified}} </h1>
+        <p>Сумма оплаты: {{payment.summa}}</p>
+          {% if payment.paid %}
+        <p>Статус оплаты: &#9745</p>
+        <a class="btn btn-warning" href="{% url 'main:setPaymentStatus' payment.payment_id False %}">Не оплачено</a>
+    {% else %}
+    <p>Статус оплаты: &#10008</p>
+    <a class="btn btn-warning" href="{% url 'main:setPaymentStatus' payment.payment_id True %}">Оплачено</a>
+    {% endif %}
+        {% endif %}
+</div>
+{% endblock %}

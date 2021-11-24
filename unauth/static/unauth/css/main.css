@@ -1,0 +1,45 @@
+body 
+{
+	background: #181818;
+
+}
+
+
+main .outer
+{
+	display: table;
+	position: absolute;
+	top: -15%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+ 
+main .features{
+    color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+main .inner {
+	margin-left: auto;
+  	margin-right: auto;
+	color: #fff;
+	margin-top: 100px;
+	text-align: center;
+}
+
+button {
+	margin-top: 10px;
+}
+main .features h1 {
+	font-size: 50px;
+}
+
+main .features p {
+	max-width: 400px;
+	margin: 20px auto;
+}
+
+
+

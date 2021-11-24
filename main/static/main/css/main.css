@@ -1,0 +1,140 @@
+body 
+{
+	background: #2c2c2c;
+	overflow: auto;
+
+}
+aside {
+	position: fixed;
+	top: 0;
+
+	z-index: 1000002;
+	float: left;
+	background: #181818;
+	width: 22%;
+	padding: 2%;
+	height: 100vh;
+	color: #fff;
+	border-right: 5px solid #4d4d4d;
+	flex-shrink: 0;
+
+}
+
+
+
+aside img {
+	width: 70px;
+	float: left;
+}
+
+aside .logo {
+	font-size: 40px;
+	margin-left: 10px;
+	font-weight: bold;
+	position: relative;
+	top: -5px;
+}
+
+aside h4 {
+	position: relative;
+	top: -2%;
+
+}
+
+aside ul {
+	list-style: none;
+}
+
+aside ul li {
+	color: #fff;
+	display: block;
+	margin-top: 20px;
+	transition: transform .6s ease;
+}
+
+
+
+a {
+	 text-decoration: none;
+}
+
+.paid {
+    color: #35973B;
+}
+
+.unpaid {
+    color: #E30A17;
+}
+
+aside ul li:hover, aside ul a:hover {
+	color: #eb5959;
+	transform: scale(1.05);
+}
+
+main .features{
+	float: right;
+	color: #fff;
+	margin-top: 100px;
+	text-align: center;
+	width: 75%;
+}
+
+main .features h1 {
+	font-size: 50px;
+}
+
+main .features p {
+	max-width: 400px;
+	margin: 20px auto;
+
+	
+}
+
+table {
+	text-align: center;
+	vertical-align: text-top;
+	left: -10%;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid white;
+	padding:5px;
+	height: 130px;
+	width: 130px;
+	border-color: white;
+}
+
+main .features2{
+	float: right;
+	color: #fff;
+	margin-top: 50px;
+	text-align: center;
+	width: 75%;
+}
+
+main .features2 h1 {
+	font-size: 50px;
+}
+
+main .features2 p {
+	max-width: 400px;
+	margin: 5px auto;
+
+	
+}
+
+.btn 
+{
+	margin-bottom: 15px;
+}
+
+.new_task_form *:not(label,input[type=checkbox]){
+	width: 400px;
+	margin-top: 5px;
+	margin-bottom: : 5px;
+	background-color: #181818;
+	color: #fff;
+}
+
+

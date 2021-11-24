@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Календарь</h1>
+    <table>
+        {% if dates %}
+        {% if days %}
+        {% if tasks %}
+        {% if month %}
+    <tr>
+        <td>{% if dates.0 %} {{dates.0}} ({{days.0}}){% endif %}  {% if tasks.0 %} {{tasks.0|linebreaks}} {% endif %}</td>
+                <td>{% if dates.1 %} {{dates.1}} ({{days.1}}){% endif %}   {% if tasks.1 %} {{tasks.1|linebreaks}} {% endif %}</td>
+                <td>{% if dates.2 %} {{dates.2}} ({{days.2}}){% endif %}  {% if tasks.2 %} {{tasks.2|linebreaks}} {% endif %}</td>
+                <td>{% if dates.3 %} {{dates.3}} ({{days.3}}){% endif %}   {% if tasks.3 %} {{tasks.3|linebreaks}} {% endif %}</td>
+                <td>{% if dates.4 %} {{dates.4}} ({{days.4}}){% endif %}   {% if tasks.4 %} {{tasks.4|linebreaks}} {% endif %}</td>
+                <td>{% if dates.5 %} {{dates.5}} ({{days.5}}){% endif %}   {% if tasks.5 %} {{tasks.5|linebreaks}} {% endif %}</td>
+                <td>{% if dates.6 %} {{dates.6}} ({{days.6}}){% endif %}   {% if tasks.6 %} {{tasks.6|linebreaks}} {% endif %}</td>
+    </tr>
+        <tr>
+                    <td>{% if dates.7 %} {{dates.7}} ({{days.7}}){% endif %}   {% if tasks.7 %} {{tasks.7|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.8 %} {{dates.8}} ({{days.8}}){% endif %}   {% if tasks.8 %} {{tasks.8|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.9 %} {{dates.9}} ({{days.6}}){% endif %}   {% if tasks.9 %} {{tasks.9|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.10 %} {{dates.10}} ({{days.10}}){% endif %}   {% if tasks.10 %} {{tasks.10|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.11 %} {{dates.11}} ({{days.11}}){% endif %}   {% if tasks.11 %} {{tasks.11|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.12 %} {{dates.12}} ({{days.12}}){% endif %}   {% if tasks.12 %} {{tasks.12|linebreaks}} {% endif %}</td>
+                    <td>{% if dates.13 %} {{dates.13}} ({{days.13}}){% endif %}   {% if tasks.13 %} {{tasks.13|linebreaks}} {% endif %}</td>
+        </tr>
+            <tr>
+                        <td>{% if dates.14 %} {{dates.14}} ({{days.14}}){% endif %}   {% if tasks.14 %} {{tasks.14|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.15 %} {{dates.15}} ({{days.15}}){% endif %}   {% if tasks.15 %} {{tasks.15|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.16 %} {{dates.16}} ({{days.16}}){% endif %}   {% if tasks.16 %} {{tasks.16|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.17 %} {{dates.17}} ({{days.17}}){% endif %}   {% if tasks.17 %} {{tasks.17|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.18 %} {{dates.18}} ({{days.18}}){% endif %}   {% if tasks.18 %} {{tasks.18|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.19 %} {{dates.19}} ({{days.19}}){% endif %}   {% if tasks.19 %} {{tasks.19|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.20 %} {{dates.20}} ({{days.20}}){% endif %}   {% if tasks.20 %} {{tasks.20|linebreaks}} {% endif %}</td>
+            </tr>
+            <tr>
+                        <td>{% if dates.21 %} {{dates.21}} ({{days.21}}){% endif %}   {% if tasks.21 %} {{tasks.21|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.22 %} {{dates.22}} ({{days.22}}){% endif %}   {% if tasks.22 %} {{tasks.22|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.23 %} {{dates.23}} ({{days.23}}){% endif %}   {% if tasks.23 %} {{tasks.23|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.24 %} {{dates.24}} ({{days.24}}){% endif %}   {% if tasks.24 %} {{tasks.24|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.25 %} {{dates.25}} ({{days.25}}){% endif %}   {% if tasks.25 %} {{tasks.25|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.26 %} {{dates.26}} ({{days.26}}){% endif %}   {% if tasks.26 %} {{tasks.26|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.27 %} {{dates.27}} ({{days.27}}){% endif %}   {% if tasks.27 %} {{tasks.27|linebreaks}} {% endif %}</td>
+            </tr>
+            <tr>
+                        <td>{% if dates.28 %} {{dates.28}} ({{days.28}}){% endif %}   {% if tasks.28 %} {{tasks.28|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.29 %} {{dates.29}} ({{days.29}}){% endif %}   {% if tasks.29 %} {{tasks.29|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.30 %} {{dates.30}} ({{days.30}}){% endif %}   {% if tasks.30 %} {{tasks.30|linebreaks}} {% endif %}</td>
+                        <td>{% if dates.31 %} {{dates.31}} ({{days.31}}){% endif %}   {% if tasks.31 %} {{tasks.31|linebreaks}} {% endif %}</td>
+                        </tr>
+    </table>
+    {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+</div>
+{% endblock %}

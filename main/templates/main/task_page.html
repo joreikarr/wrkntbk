@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Открытые
+{% endblock %}
+
+{% block content %}
+<div class="features2">
+    {% if task %}
+    <h1>{{task.identified}}</h1>
+    {% if task.in_wait_status %}
+        <a class="btn btn-warning" href="{% url 'main:setInWaitStatus' task.identified False %}">Разморозить</a>
+    {% else %}
+    <a class="btn btn-warning" href="{% url 'main:setInWaitStatus' task.identified True %}">Заморозить</a>
+    {% endif %}
+
+    {% if task.status == 'Активен' %}
+        <a class="btn btn-warning" href="{% url 'main:setStatus' task.identified 'Закрыт' %}">Закрыть</a>
+        <a class="btn btn-warning" href="{% url 'main:setStatus' task.identified 'Правки' %}">Правки</a>
+    {% elif task.status == 'Закрыт'  %}
+        <a class="btn btn-warning" href="{% url 'main:setStatus' task.identified 'Активен' %}">Открыть</a>
+        <a class="btn btn-warning" href="{% url 'main:setStatus' task.identified 'Правки' %}">Правки</a>
+    {% elif task.status == 'Правки'  %}
+        <a class="btn btn-warning" href="{% url 'main:setStatus' task.identified 'Активен' %}">Открыть</a>
+    {% endif %}
+
+
+
+
+
+
+        <p>Дедлайн: {{task.deadline}}</p>
+        <p>{{task.short_description}}</p>
+        <p>В ожидании: {% if task.in_wait_status %} &#9745 {% else %} &#10008 {% endif %}</p>
+        <p>Менеджер: {{task.manager}}</p>
+
+    <p>{{task.full_description|linebreaks}}</p>
+    <p>Цена:{{task.payment}}</p>
+    <p>Статус:{{task.status}}</p>
+    <p><a href="{{task.documentation_link}}">Документация</a></p>
+    <p><a href="{{task.project_link}}">Проект</a></p>
+    <p>Части оплаты: {{task.payment_parts}}</p>
+    {% if task.payment_parts == '1/2' %}
+    <p>Первая часть оплачена: {% if task.part1 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Вторая часть оплачена: {% if task.part2 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    {% elif task.payment_parts == '1/3' %}
+    <p>Первая часть оплачена: {% if task.part1 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Вторая часть оплачена: {% if task.part2 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Третья часть оплачена: {% if task.part3 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    {% elif task.payment_parts == '1/4' %}
+    <p>Первая часть оплачена: {% if task.part1 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Вторая часть оплачена: {% if task.part2 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Третья часть оплачена: {% if task.part3 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    <p>Четвёртая часть оплачена: {% if task.part4 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    {% elif task.payment_parts == 'Full' %}
+    <p>Оплата: {% if task.part1 %} &#9745 {% else %} &#10008 {% endif %}</p>
+    {% endif %}
+
+
+
+
+
+<hr>
+
+    <p>Блок оплат</p>
+    {% if task.payment_parts == '1/2' %}
+     {% if task.part1 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 1 task.payment 2 %}">Оплачена 1 часть</a>
+     {% endif %}
+     {% if task.part2 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 2  task.payment 2 %}">Оплачена 2 часть</a>
+    {% endif %}
+
+
+    {% elif task.payment_parts == '1/3' %}
+     {% if task.part1 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 1  task.payment 3 %}">Оплачена 1 часть</a>
+     {% endif %}
+    {% if task.part2 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 2  task.payment 3 %}">Оплачена 2 часть</a>
+    {% endif %}
+    {% if task.part3 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 3  task.payment 3 %}">Оплачена 3 часть</a>
+    {% endif %}
+
+
+    {% elif task.payment_parts == '1/4' %}
+      {% if task.part1 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 1  task.payment 4 %}">Оплачена 1 часть</a>
+     {% endif %}
+    {% if task.part2 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 2  task.payment 4 %}">Оплачена 2 часть</a>
+    {% endif %}
+    {% if task.part3 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 3  task.payment 4 %}">Оплачена 3 часть</a>
+    {% endif %}
+     {% if task.part4 == False %}
+    <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 4  task.payment 4 %}">Оплачена 4 часть</a>
+    {% endif %}
+
+
+
+    {% elif task.payment_parts == 'Full' %}
+     {% if task.part1 == False %}
+     <a class="btn btn-warning" href="{% url 'main:setPayment' task.identified 1  task.payment 1 %}">Оплачено</a>
+     {% endif %}
+    {% endif %}
+
+    {% endif %}
+</div>
+{% endblock %}

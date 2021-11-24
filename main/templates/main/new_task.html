@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Новый
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Новый заказ</h1>
+    <form method="POST" class="new_task_form">
+        {% csrf_token %}
+        {{form.user}}
+        <br>
+        {{form.identified}}
+        <br>
+        {{form.manager}}
+        <br>
+        {{form.short_description}}
+        <br>
+        {{form.full_description}}
+        <br>
+        {{form.deadline}}
+        <br>
+        {{form.payment}}
+        <br>
+        {{form.status}}
+        <br>
+        {{form.documentation_link}}
+        <br>
+        {{form.project_link}}
+        <br>
+        {{form.payment_parts}}
+        <br>
+                <label for="id_part1">Оплачена первая часть</label>
+        {{form.part1}}
+        <br>
+                <label for="id_part2">Оплачена вторая часть</label>
+        {{form.part2}}
+        <br>
+                <label for="id_part3">Оплачена третья часть</label>
+        {{form.part3}}
+        <br>
+                <label for="id_part4">Оплачена четвёртая часть</label>
+        {{form.part4}}
+        <br>
+        <input class="btn btn-warning" type="submit" value="Добавить заказ">
+    </form>
+
+</div>
+{% endblock %}

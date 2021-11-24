@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Оплаты
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Оплаты</h1>
+     {% if unpaid %}
+     <p>Ожидаемая сумма оплат: {{unpaid}}</p>
+     {% endif %}
+     {% if list %}
+        {% for payment in list %}
+            {% if payment.paid == True %}
+            <p><a class="paid" href="{% url 'main:payment_page' payment.payment_id %}"> <i class="fas fa-coins"></i> {{payment}} {{payment.summa}} </a></p>
+            {% elif payment.paid == False %}
+            <p><a class="unpaid" href="{% url 'main:payment_page' payment.payment_id %}"> <i class="fas fa-coins"></i> {{payment}} ({{payment.summa}} грн) </a></p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

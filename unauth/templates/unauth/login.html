@@ -1,0 +1,43 @@
+{% extends 'unauth/base.html' %}
+{% load static %}
+{% block title %}
+Авторизация
+{% endblock %}
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'unauth/css/login.css' %}">
+    {% endblock %}
+
+{% block content %}
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="out">
+    <div class="in1">
+        <div class="in2">
+
+<div class="testbox">
+  <h1>АВТОРИЗАЦИЯ</h1>
+
+  <form method="post">
+        {% csrf_token %}
+      <hr>
+  <hr>
+
+<label id="icon"><i class="icon-user"></i></label>
+  {{form.username}}
+
+
+  <label id="icon" ><i class="icon-shield"></i></label>
+  {{form.password}}
+
+
+  <button type="submit" class="btn btn-danger">Войти</button>
+  </form>
+            </div>
+            </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Замороженные
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Замороженные заказы</h1>
+     {% if list %}
+        {% for task in list %}
+            <p><a href="{% url 'main:task' task.identified %}"> <i class="fas fa-pen"></i> {{task.identified}}({{task.manager}}) </a></p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

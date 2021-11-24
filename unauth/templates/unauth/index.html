@@ -1,0 +1,29 @@
+
+{% extends 'unauth/base.html' %}
+{% load static %}
+{% block title %}
+Social
+{% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'unauth/css/main.css' %}">
+    {% endblock %}
+{% block content %}
+<div class="outer">
+
+
+    <div class="features">
+        <div class="inner">
+            <img src="{% static 'unauth/img/logo_w.png' %}" alt="">
+            <h1>Social</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, delectus maiores nesciunt nisi quisquam quos! Deserunt modi molestias velit vero.</p>
+            <form action="login_btn_url" method="GET">
+                <button class="btn btn-warning" type="submit">Войти</button>
+            </form>
+            <br>
+            <form action="register_btn_url" method="GET">
+                <button class="btn btn-danger">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
